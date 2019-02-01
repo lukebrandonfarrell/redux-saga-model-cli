@@ -1,0 +1,51 @@
+{
+  "name": "saga-generator",
+  "version": "0.0.0",
+  "author": "Luke Brandon Farrell @lukebrandonfarrell",
+  "bin": {
+    "saga-generator": "./bin/run"
+  },
+  "bugs": "https://github.com/lukebrandonfarrell/saga-generator/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.8",
+    "@oclif/config": "^1.12.4",
+    "@oclif/plugin-help": "^2.1.6",
+    "cli-ux": "^5.0.0",
+    "fs-extra": "^7.0.1",
+    "lodash": "^4.17.11",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.21.0",
+    "globby": "^8.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/lukebrandonfarrell/saga-generator",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "saga-generator",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "lukebrandonfarrell/saga-generator",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}

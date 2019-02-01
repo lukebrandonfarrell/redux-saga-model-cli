@@ -1,0 +1,77 @@
+{
+  "models": {
+    "subscription": {
+      "url": "user/subscription",
+      "methods": {
+        "show": { "meta": ["api_token", "device_token"] },
+        "store": { "params" : ["stripe_token", "postcode", "country", "coupon", "terms"], "meta": ["api_token", "device_token"] },
+        "update": { "params" : ["id", "plan"], "meta": ["api_token", "device_token"] },
+        "destroy": { "meta": ["api_token", "device_token"] }
+      }
+    },
+    "order": {
+      "url": "user/orders",
+      "methods": {
+        "index" : { "params" : ["index"], "meta": ["api_token", "device_token"] },
+        "show": { "params" : ["id"], "meta": ["api_token", "device_token"] },
+        "store": { "params" : ["amount", "source", "use_credits"], "meta": ["api_token", "device_token"] },
+        "update": { "params" : ["id"], "meta": ["api_token", "device_token"] }
+      }
+    },
+    "ashleigh-card": {
+      "url": "user/card",
+      "methods": {
+        "show": { "params" : ["id"], "meta": ["api_token", "device_token"] },
+        "store": { "meta": ["api_token", "device_token"] },
+        "update": { "params" : ["id", "activated"], "meta": ["api_token", "device_token"] }
+      }
+    },
+    "device": {
+      "url": "user/card",
+      "methods": {
+        "show": { "params" : ["id"], "meta": ["device_token"] },
+        "store": { "params": ["uuid", "platform", "push_token"] },
+        "update": { "params" : ["id", "push_token"], "meta": ["device_token"] }
+      }
+    },
+    "stripe-card": {
+      "url": "/user/stripe/card",
+      "methods": {
+        "index":  { "meta": ["api_token", "device_token"] },
+        "show": { "params" : ["id"], "meta": ["api_token", "device_token"] },
+        "store": { "params": ["token"], "meta": ["api_token", "device_token"] },
+        "update": { "meta": ["api_token", "device_token"] },
+        "destroy": { "params" : ["id"], "meta": ["api_token", "device_token"] }
+      }
+    },
+    "favourite-brand": {
+      "url": "/user/brands",
+      "methods": {
+        "index":  { "meta": ["api_token", "device_token"] },
+        "show": { "params" : ["id"], "meta": ["api_token", "device_token"] },
+        "store": { "params": ["slug"], "meta": ["api_token", "device_token"] },
+        "destroy": { "params": ["slug"], "meta": ["api_token", "device_token"] }
+      }
+    },
+    "brand": {
+      "url": "/brands",
+      "methods": {
+        "index":  { "meta": ["device_token"] },
+        "show": { "params" : ["id"], "meta": ["device_token"] },
+        "store": { "meta": ["api_token", "device_token"] },
+        "update": { "meta": ["api_token", "device_token"] },
+        "destroy": { "params" : ["id"], "meta": ["api_token", "device_token"] }
+      }
+    },
+    "category": {
+      "url": "/categories",
+      "methods": {
+        "index":  { "meta": ["device_token"] },
+        "show": { "params" : ["id"], "meta": ["device_token"] },
+        "store": { "meta": ["device_token"] },
+        "update": { "meta": ["device_token"] },
+        "destroy": { "params" : ["id"], "meta": ["device_token"] }
+      }
+    }
+  }
+}
